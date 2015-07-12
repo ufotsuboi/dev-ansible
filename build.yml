@@ -1,0 +1,6 @@
+- hosts: dev
+  gather_facts: no
+  roles:
+    - { role: ubuntu, tags: ubuntu, when: target == 'ubuntu'}
+    # - { role: centos, tags: centos, when: target == 'centos'}
+    - { role: dotfiles, tags: dotfiles }

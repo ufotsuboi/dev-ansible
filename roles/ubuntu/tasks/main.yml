@@ -1,0 +1,7 @@
+- name: Apt-get install -> emacs, zsh, tig
+  apt: name={{ item }}
+  with_items:
+    - git
+    - emacs
+    - zsh
+    - tig

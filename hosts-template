@@ -1,0 +1,5 @@
+[dev]
+# add your host
+
+[dev:vars]
+target='ubuntu or centos'

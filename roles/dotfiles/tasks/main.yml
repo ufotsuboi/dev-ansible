@@ -1,0 +1,12 @@
+- name: Dotfiles -> pull
+  # git: repo=https://github.com/yuuho/dotfiles.git dest=/root/.dotfiles accept_hostkey=yes update=yes version=master
+  git: repo=git@github.com:yuuho/dotfiles.git dest=/root/.dotfiles accept_hostkey=yes update=yes version=master
+  poll: 30
+
+- name: Setup dotfiles
+  shell: ./setup.sh
+  args:
+    chdir: ~/.dotfiles
+
+- name: Change shell
+  shell: chsh -s $(grep /zsh$ /etc/shells | tail -1)
