@@ -1,7 +1,11 @@
-- name: Apt-get install -> emacs, zsh, tig
-  apt: name={{ item }}
-  with_items:
-    - git
-    - emacs
-    - zsh
-    - tig
+- name: Apt install -> git
+  apt: name=git state=present update_cache=yes
+
+- name: Apt install -> emacs
+  apt: name=emacs
+
+- name: Apt install -> zsh
+  apt: name=zsh
+
+- name: Apt install -> tig
+  apt: name=tig
